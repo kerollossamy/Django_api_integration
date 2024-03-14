@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from myapi.views import hello_world
+from reviews_api.views import ReviewDetail, ReviewList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello-world/', hello_world, name='hello_world'),
+    path('reviews/', ReviewList.as_view(), name='reviews'),
+    path('reviews/<int:pk>/', ReviewDetail.as_view(), name='review-detail'),
 ]
