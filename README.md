@@ -30,9 +30,7 @@ To get started with this project, follow these steps:
 ```bash
 # Activate the virtual environment
 pipenv shell
-```
 
-```bash
 # Run Django server
 python manage.py runserver
 ```
