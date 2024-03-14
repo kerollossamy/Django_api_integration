@@ -17,27 +17,24 @@ To get started with this project, follow these steps:
    ```bash
    git clone https://github.com/kerollossamy/Django_api_integration_test.git
 
-Navigate to the project directory:
+2. Navigate to the project directory:
 cd Django_api_integration_test
 
-Install dependencies:
+3. Install dependencies:
 # Assuming you have pipenv installed
 pipenv install
 
-Run the Django server:
+4. Run the Django server:
 # Activate the virtual environment
 pipenv shell
-
 # Run Django server
 python manage.py runserver
 
-Start the React.js frontend:
+5. Start the React.js frontend:
 # Navigate to the frontend directory
 cd myapp
-
-# Install dependencies
+ # Install dependencies
 npm install
-
 # Start the development server
 npm start
 
