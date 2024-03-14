@@ -14,29 +14,40 @@ This project showcases integration testing for a Django API with a React.js fron
 To get started with this project, follow these steps:
 
 1. **Clone the repository:**
-   ```bash
+```bash
    git clone https://github.com/kerollossamy/Django_api_integration_test.git
-
-2. Navigate to the project directory:
-cd Django_api_integration_test
-
-3. Install dependencies:
+```
+2. **Navigate to the project directory:**
+```bash
+    cd Django_api_integration_test
+```
+3. **Install dependencies:**
+```bash
 # Assuming you have pipenv installed
-pipenv install
-
-4. Run the Django server:
+ pipenv install
+```
+4. **Run the Django server:**
+```bash
 # Activate the virtual environment
 pipenv shell
+```
+
+```bash
 # Run Django server
 python manage.py runserver
+```
 
-5. Start the React.js frontend:
+5. **Start the React.js frontend:**
+```bash
 # Navigate to the frontend directory
 cd myapp
- # Install dependencies
+
+# Install dependencies
 npm install
+
 # Start the development server
 npm start
+```
 
-Access the application:
+# Access the application:
 Once the Django server and React.js frontend are running, you can access the application at http://localhost:3000 in your web browser.
