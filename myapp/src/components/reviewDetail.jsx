@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import Modal from './confirmationModal';
+import EditReviewForm from './EditReviewForm';
 import './reviewDetail.css';
 
 function ReviewDetail() {
@@ -11,6 +12,7 @@ function ReviewDetail() {
   const [error, setError] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditFormOpen, setIsEditFormOpen] = useState(false);
 
   useEffect(() => {
     const fetchReview = async () => {
@@ -36,6 +38,23 @@ function ReviewDetail() {
     } catch (error) {
       console.error('Error deleting review:', error);
       setIsDeleting(false);
+    }
+  };
+
+  const handleEdit = () => {
+    setIsEditFormOpen(true);
+  };
+
+  const handleCloseEditForm = () => {
+    setIsEditFormOpen(false);
+  };
+
+  const fetchUpdatedReview = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/reviews/${id}/`);
+      setReview(response.data);
+    } catch (error) {
+      console.error('Error fetching updated review data:', error);
     }
   };
 
@@ -67,6 +86,7 @@ function ReviewDetail() {
             >
               Delete
             </button>
+            <button className="edit-button" onClick={handleEdit}>Edit</button>
             <Link to="/reviews">
               <button className="back-button">Back to Reviews List</button>
             </Link>
@@ -77,6 +97,15 @@ function ReviewDetail() {
             onCancel={() => setIsModalOpen(false)}
             onConfirm={handleDelete}
           />
+          {isEditFormOpen && (
+            <EditReviewForm
+              review={review}
+              onClose={() => {
+                handleCloseEditForm();
+                fetchUpdatedReview();
+              }}
+            />
+          )}
         </div>
       )}
     </div>

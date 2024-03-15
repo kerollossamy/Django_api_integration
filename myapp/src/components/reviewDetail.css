@@ -92,3 +92,13 @@
 .star {
   font-size: 20px;
 }
+
+.edit-button {
+  padding: 8px 16px;
+  background-color: #205dce !important;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+}
